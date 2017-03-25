@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets;
+package br.com.andreia.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Andréia
  */
-@WebServlet(name = "JurosSimplesServlet", urlPatterns = {"/jurossimples.html"})
-public class JurosSimplesServlet extends HttpServlet {
+@WebServlet(name = "HomeServlet", urlPatterns = {"/home.html"})
+public class HomeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,49 +37,57 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Projeto POO Servlet</title>");            
+            out.println("<title>Projeto POO 2</title>");    
+            out.println("<link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Projeto POO Servlet</h1>");
-            out.println("<h2>Juros Simples</h2>");
-            out.println("<form>");
-            out.println("<table border='2' style='border-collapse: collapse;'>");
-            out.println("<tr>");
-            out.println("<th>");
-            out.println("Capital Inicial:");
-            out.println("</th>");
-            out.println("<td>");
-            out.println("<input type='number' name='capital'/>");
-            out.println("</td>");
-            out.println("<th>");
-            out.println("Taxa de Juros");
-            out.println("</th>");
-            out.println("<td>");
-            out.println("<input type='number' name='juros'/>");
-            out.println("</td>");
-            out.println("<th>");
-            out.println("Tempo");
-            out.println("</th>");
-            out.println("<td>");
-            out.println("<input type='number' name='tempo'/>");
-            out.println("</td>");
-            out.println("<td>");
-            out.println("<input type='submit' value='Calcular'/><br/>");
-            out.println("</td>");
-            out.println("</tr>");
-            out.println("<tr>");
-            out.println("<th>");
-            out.println("Montante:");
-            out.println("</th>");
-            out.println("<td colspan='6'>");
-            out.println("<input type='text' name='montante'/><br/>");
-            out.println("</td>");
-            out.println("</table>");
-            out.println("</form>");
+            out.println("<h2>Calculando Juros Simples e Juros Compostos</h2>");
+            out.println("<h3>Juros Simples</h3>");
+            out.println("<p>Juros Simples\n" +
+            "No sistema de juros simples, o percentual é aplicado apenas sobre o valor inicial." + 
+                    "Geralmente, o juro simples é usado em situações de curto prazo. "+
+                    "Podemos definir juros como o rendimento de uma aplicação financeira, "+
+                    "valor referente ao atraso no pagamento de uma prestação ou a quantia paga pelo empréstimo de um capital.</p>");
+            out.println("<h3>Juros Compostos</h3>");
+            out.println("<p>Juros Compostos\n" + "Juros compostos são os juros de um determinado período" + 
+            "somados ao capital para o cálculo de novos juros nos períodos seguintes. Juros compostos fazem" +
+            "parte de disciplinas e conceitos de matemática financeira, e esses juros são representados" +
+                    "através de um percentual.</p>");
+            out.println("<div>");
+            out.println("Calcular:<br/>");
+            out.println("<a href='jurossimples.html'>Juros Simples</a><br/>");
+            out.println("<a href='juroscompostos.html'>Juros Compostos</a><br/>");
+            out.println("</div>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("<h2>Equipe</h2><br/>");
+            out.println("<div class=\"col-lg-4\">");
+            out.println("<img src='imagens/andreia.jpg' alt=\"Generic placeholder image\" class='img-circle' width='140' height='140'/>");
+            out.println("<h4>Andréia Coelho</h4>");
+            out.println("</div <!-- /.col-lg-4 -->>");
+            out.println("<div class=\"col-lg-4\">");
+            out.println("<img src='imagens/jeferson.jpg' class='img-circle' alt=\"Generic placeholder image\" width='140' height='140'/>"); 
+            out.println("<h4>Jeferson Ortiz</h4>");
+            out.println("</div <!-- /.col-lg-4 -->");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("<footer>");
+            out.println("<p>© Fatec-PG - POO</p>");
+            out.println("</footer>");
             out.println("</body>");
             out.println("</html>");
         }
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
