@@ -37,7 +37,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet: Juros Simples</title>");            
+            out.println("<title>Servlet: Juros Composto</title>");            
             out.println("</head>");
             out.println("<body>");
             double capitalInicial = 0;
@@ -68,13 +68,13 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</tr>");
             out.println("<tr>");
             out.println("<td>");
-            out.println("<input type='text' name='Valor Inicial' value='" + capitalInicial + "'/>");
+            out.println("<input type='text' name='capitalInicial' value='" + capitalInicial + "'/>");
             out.println("</td>");
             out.println("<td>");
-            out.println("<input type='text' name='Taxa' value='" + juros + "'/>");
+            out.println("<input type='text' name='taxaJuros' value='" + juros + "'/>");
             out.println("</td>");
             out.println("<td>");
-            out.println("<input type='text' name='Tempo(Meses)' value='" + meses + "'/>");
+            out.println("<input type='text' name='tempo' value='" + meses + "'/>");
             out.println("</td>");
             out.println("</tr>");
             out.println("<tr>");
@@ -83,7 +83,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</td>");
             out.println("<td colspan='2'>");
             DecimalFormat df = new DecimalFormat("#.##");
-            out.println("<p>" + df.format(capitalInicial * (Math.pow((1+juros), meses))) + "</p>");
+            out.println("<p>" + df.format(capitalInicial * (Math.pow((1+juros), meses))) + "</p");
             out.println("</td>");
             out.println("</table");
             out.println("</form>");
@@ -91,6 +91,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</html>");
         }
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
