@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jeferson
+ * @author Andréia
  */
-@WebServlet(name = "JurosCompostoServlet", urlPatterns = {"/juroscomposto.html"})
-public class JurosCompostoServlet extends HttpServlet {
+@WebServlet(name = "JurosComposto1Servlet", urlPatterns = {"/juroscomposto1.html"})
+public class JurosComposto1Servlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,29 +33,55 @@ public class JurosCompostoServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+         try (PrintWriter out = response.getWriter()) {
+        
+             double capitalInicial = 0;
+            double juros = 0;
+            int meses = 0;
+            
+            try{
+              capitalInicial = Double.parseDouble(request.getParameter("capitalInicial"));
+              juros = Double.parseDouble(request.getParameter("taxaJuros"));
+              meses = Integer.parseInt(request.getParameter("tempo"));
+            } catch(Exception ex){ }
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet: Juros Composto</title>");            
+            out.println("<link href='css/estilo.css' type='text/css' rel='stylesheet'/>");
+            out.println("<link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<p><h2>Formulário para cálculo de juros compostos</h2>");
-            double montante = 0;
-            double capitalInicial = 0;
-            double taxa = 0;
-            int tempo = 0;
-            try{
-              montante = Double.parseDouble(request.getParameter("montante"));
-              capitalInicial = Double.parseDouble(request.getParameter("capitalInicial"));
-              taxa = Double.parseDouble(request.getParameter("taxaJuros"));
-              tempo = Integer.parseInt(request.getParameter("tempo"));
-            } catch(Exception ex){}
+            out.println("<div class=\"container\">");
+            out.println("<header>");
+            out.println("<h1>Juros Composto</h1>");
+            out.println("</header>");
+            
+            out.println("<nav>");
+            out.println("<ul>");
+            out.println("<li><a href='home.html'>Home</a></li>");
+            out.println("<li><a href='jurossimples.html'>Juros Simples</a></li>");
+            out.println("</ul>");
+            out.println("</nav>");
+            
+            
+            
+            out.println("<article>");
+            out.println("<h2>Calculando Juros Composto</h2>");
+            out.println("<p>Juros compostos são os juros de um determinado período somados ao capital para o cálculo de novos juros nos períodos seguintes. Juros compostos fazem parte de disciplinas e conceitos de matemática financeira, e esses juros são representados através de um percentual.</p>");
+            out.println("</article>");
+            
+                      
+            out.println("<article>");
+            out.println("</br>");
+            out.println("</article>");
+            
+            out.println("<article>");
             out.println("<form>");
             out.println("<table border='5'>");
             out.println("<tr>");
             out.println("<th colspan='3'>");
-            out.println("Calcular Juros");
+            out.println("Entrada de Dados");
             out.println("</th>");
             out.println("</tr>");
             out.println("<tr>");
@@ -63,21 +89,21 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("Valor inicial");
             out.println("</th>");
             out.println("<th>");
-            out.println("Taxa");
+            out.println("Taxa de juros");
             out.println("</th>");
             out.println("<th>");
-            out.println("Tempo(meses)");
+            out.println("Tempo(Meses)");
             out.println("</th>");
             out.println("</tr>");
             out.println("<tr>");
             out.println("<td>");
-            out.println("<p><input type='text' name='capitalInicial' value='" + capitalInicial + "'>");
+            out.println("<input type='text' name='capitalInicial' value='" + capitalInicial + "'/>");
             out.println("</td>");
             out.println("<td>");
-            out.println("<p><input type='text' name='taxa' value='" + taxa + "'/>");
+            out.println("<input type='text' name='taxaJuros' value='" + juros + "'/>");
             out.println("</td>");
             out.println("<td>");
-            out.println("<p><input type='text'  name='tempo' value='" + tempo + "'/>");
+            out.println("<input type='text' name='tempo' value='" + meses + "'/>");
             out.println("</td>");
             out.println("</tr>");
             out.println("<tr>");
@@ -86,14 +112,32 @@ public class JurosCompostoServlet extends HttpServlet {
             out.println("</td>");
             out.println("<td colspan='2'>");
             DecimalFormat df = new DecimalFormat("#.##");
-            out.println("<p>" + df.format(montante = capitalInicial * (Math.pow((1 + taxa) , tempo))) + "</p>");
+            out.println("<p>" + df.format(capitalInicial * (Math.pow((1+juros), meses))) + "</p");
             out.println("</td>");
             out.println("</table");
             out.println("</form>");
+            out.println("</article>");
+            
+            out.println("<article>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</article>");
+            
+            
+            
+            out.println("<footer>Copyright &copy; FATEC PG - POO</footer>");
+            
+            out.println("</div>");
+            
             out.println("</body>");
-            out.println("</html>");
+            out.println("</html>");  
+  
+      
+          
         }
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

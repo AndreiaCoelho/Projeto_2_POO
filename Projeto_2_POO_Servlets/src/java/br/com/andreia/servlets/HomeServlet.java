@@ -42,13 +42,13 @@ public class HomeServlet extends HttpServlet {
             out.println("<body>");
             out.println("<div class=\"container\">");
             out.println("<header>");
-            out.println("<h1>Calculando Juros Simples e Juros Composto</h1>");
+            out.println("<h1>Juros Simples e Juros Composto</h1>");
             out.println("</header>");
             
             out.println("<nav>");
             out.println("<ul>");
             out.println("<li><a href='jurossimples.html'>Juros Simples</a></li>");
-            out.println("<li><a href='juroscompostos.html'>Juros Compostos</a></li>");
+            out.println("<li><a href='juroscomposto1.html'>Juros Compostos</a></li>");
             out.println("</ul>");
             out.println("</nav>");
             
@@ -66,8 +66,6 @@ public class HomeServlet extends HttpServlet {
             
             out.println("<article>");
             out.println("</br>");
-            out.println("</br>");
-            out.println("</br>");
             out.println("</article>");
             
             out.println("<article>");
@@ -75,7 +73,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<div class=\"col-lg-4\">");
             out.println("<img src='imagens/andreia.jpg' alt=\"Generic placeholder image\" class='img-circle' width='140' height='140'/>");
             out.println("<h4>Andréia Coelho</h4>");
-            out.println("</div <!-- /.col-lg-4 -->>");
+            out.println("</div <!-- /.col-lg-4 -->");
             out.println("<div class=\"col-lg-4\">");
             out.println("<img src='imagens/jeferson.jpg' class='img-circle' alt=\"Generic placeholder image\" width='140' height='140'/>"); 
             out.println("<h4>Jeferson Ortiz</h4>");
