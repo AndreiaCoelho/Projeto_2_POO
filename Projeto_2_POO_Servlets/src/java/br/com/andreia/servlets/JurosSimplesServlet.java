@@ -69,7 +69,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<article>");
             out.println("<h2>Calculando Juros Simples</h2>");
             out.println("<p>No sistema de juros simples, o percentual é aplicado apenas sobre o valor inicial.Geralmente, o juro simples é usado em situações de curto prazo. Podemos definir juros como o rendimento de uma aplicação financeira,valor referente ao atraso no pagamento de uma prestação ou a quantia paga pelo empréstimo de um capital.</p>");
-            out.println("<p>Para calcular o juros simples basta inserir as informações na tabela abaixo. No campo 'Taxa de Juros' informe a taxa de forma decimal, ou seja já divido por 100, por exemplo se seu rendimento obteve juros de 10%, insira 0.1. </p>");
+            out.println("<p>Para calcular o juros simples basta inserir as informações na tabela abaixo. No campo 'Taxa de Juros' informe a taxa de forma decimal, ou seja, já divido por 100.Por exemplo, se o seu rendimento obteve juros de 10%, insira 0.1. </p>");
             out.println("</article>");
             
                       

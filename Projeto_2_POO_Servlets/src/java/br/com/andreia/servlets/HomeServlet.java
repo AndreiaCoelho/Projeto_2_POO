@@ -42,7 +42,7 @@ public class HomeServlet extends HttpServlet {
             out.println("<body>");
             out.println("<div class=\"container\">");
             out.println("<header>");
-            out.println("<h1>Juros Simples e Juros Composto</h1>");
+            out.println("<h1>Juros Simples e Juros Compostos</h1>");
             out.println("</header>");
             
             out.println("<nav>");
@@ -60,7 +60,7 @@ public class HomeServlet extends HttpServlet {
             out.println("</article>");
             
             out.println("<article>");
-            out.println("<h1>Juros Composto</h1>");
+            out.println("<h1>Juros Compostos</h1>");
             out.println("<p>Juros compostos são os juros de um determinado período somados ao capital para o cálculo de novos juros nos períodos seguintes. Juros compostos fazem parte de disciplinas e conceitos de matemática financeira, e esses juros são representados através de um percentual.</p>");
             out.println("</article>");
             
