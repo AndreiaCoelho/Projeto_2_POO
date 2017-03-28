@@ -34,20 +34,49 @@ public class JurosSimplesServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet: Juros Simples</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            double capitalInicial = 0;
+        
+             double capitalInicial = 0;
             double juros = 0;
             int meses = 0;
+            
             try{
               capitalInicial = Double.parseDouble(request.getParameter("capitalInicial"));
               juros = Double.parseDouble(request.getParameter("taxaJuros"));
               meses = Integer.parseInt(request.getParameter("tempo"));
             } catch(Exception ex){ }
+            
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<link href='css/estilo.css' type='text/css' rel='stylesheet'/>");
+            out.println("<link href='bootstrap/css/bootstrap.min.css' rel='stylesheet'>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<div class=\"container\">");
+            out.println("<header>");
+            out.println("<h1>Juros Simples</h1>");
+            out.println("</header>");
+            
+            out.println("<nav>");
+            out.println("<ul>");
+            out.println("<li><a href='home.html'>Home</a></li>");
+            out.println("<li><a href='juroscompostos.html'>Juros Compostos</a></li>");
+            out.println("</ul>");
+            out.println("</nav>");
+            
+            
+            
+            out.println("<article>");
+            out.println("<h1>Juros Simples</h1>");
+            out.println("<p>No sistema de juros simples, o percentual é aplicado apenas sobre o valor inicial.Geralmente, o juro simples é usado em situações de curto prazo. Podemos definir juros como o rendimento de uma aplicação financeira,valor referente ao atraso no pagamento de uma prestação ou a quantia paga pelo empréstimo de um capital.</p>");
+            out.println("</article>");
+            
+                      
+            out.println("<article>");
+            out.println("</br>");
+            out.println("</article>");
+            
+            out.println("<article>");
             out.println("<form>");
             out.println("<table border='5'>");
             out.println("<tr>");
@@ -83,15 +112,31 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</td>");
             out.println("<td colspan='2'>");
             DecimalFormat df = new DecimalFormat("#.##");
-            out.println("<p>" + df.format((capitalInicial)+(capitalInicial * juros * meses)) + "</p");
+            out.println("<p>" + df.format(capitalInicial+(capitalInicial * juros * meses)) + "</p");
             out.println("</td>");
             out.println("</table");
             out.println("</form>");
+            out.println("</article>");
+            
+            out.println("<article>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</article>");
+            
+            
+            
+            out.println("<footer>Copyright &copy; FATEC PG - POO</footer>");
+            
+            out.println("</div>");
+            
             out.println("</body>");
-            out.println("</html>");
+            out.println("</html>");  
+  
+      
+          
         }
     }
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
