@@ -61,6 +61,8 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("<ul>");
             out.println("<li><a href='home.html'>Home</a></li>");
             out.println("<li><a href='juroscomposto1.html'>Juros Compostos</a></li>");
+            out.println("</br>");
+            out.println("<img src='imagens/jurossimples3.jpg' alt=\"Generic placeholder image\" class='img-circle' width='140' height='140'/>");
             out.println("</ul>");
             out.println("</nav>");
             

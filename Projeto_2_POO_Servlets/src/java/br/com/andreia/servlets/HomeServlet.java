@@ -49,6 +49,8 @@ public class HomeServlet extends HttpServlet {
             out.println("<ul>");
             out.println("<li><a href='jurossimples.html'>Juros Simples</a></li>");
             out.println("<li><a href='juroscomposto1.html'>Juros Compostos</a></li>");
+            out.println("</br>");
+            out.println("<img src='imagens/calculadora.jpg' alt=\"Generic placeholder image\" class='img-circle' width='140' height='140'/>");
             out.println("</ul>");
             out.println("</nav>");
             
