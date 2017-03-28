@@ -83,7 +83,7 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</td>");
             out.println("<td colspan='2'>");
             DecimalFormat df = new DecimalFormat("#.##");
-            out.println("<p>" + df.format(capitalInicial * (Math.pow((1+juros), meses))) + "</p");
+            out.println("<p>" + df.format((capitalInicial)+(capitalInicial * juros * meses)) + "</p");
             out.println("</td>");
             out.println("</table");
             out.println("</form>");
