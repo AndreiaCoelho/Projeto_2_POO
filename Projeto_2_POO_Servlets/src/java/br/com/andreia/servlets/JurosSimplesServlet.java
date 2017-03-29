@@ -127,6 +127,16 @@ public class JurosSimplesServlet extends HttpServlet {
             out.println("</br>");
             out.println("</article>");
             
+            out.println("<article>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</br>");
+            out.println("</article>");
             
             
             out.println("<footer>Copyright &copy; FATEC PG - POO</footer>");
